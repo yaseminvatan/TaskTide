@@ -14,6 +14,21 @@ localStorage.setItem("nextId", JSON.stringify(nextId));
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
+   const colorClass =
+   // i love this phrase a lot. ots the shorter version of if else conditions.so i use this. 
+   dayjs().isAfter(task.dueDate) ? "bg-danger" : daysjs().isSame(task.dueDate, "day") ? "bg-warning" : "bg-light";  
+   return $(
+      <div class="card md-2 ${colorClass}" data-id="${task.id}">
+       <div class="card-body">
+         <h5 class="card-title">${task.title}</h5>
+         <p class="card-text">${task.description}</p>
+         <p class="card-text">
+            <small>DUe: ${dayjs(task.dueDate).format("MMM DD, YYYY")}</small>
+         </p>
+         <button class="btn btn-danger btn-sm delete-task">Delete</button>
+       </div>
+      </div>
+   );
 }
   
 
