@@ -47,8 +47,33 @@ function renderTaskList() {
 
 // Todo: create a function to handle adding a new task
 function handleAddTask(event){
+   event.preventDefault();
+   const title = $("#task-title").val().trim();
+   const description = $("#task-description").val().trim();
+   const dueDate = $("#task-due-date").val();
+   
+   // if one of the variable is false throw error
+   if (!title || !description || !dueDate) {
+      alert("Please fill out all fields!");
+      return;
+   }
+   
+   const newTask = {
+      id: generateTaskId(),
+      title,
+      description,
+      dueDate: dayjs(dueDate).format("YYYY-MM-DD"),
+      status: "to-do",
+   };
+  
+   taskList.push(newTask);
+   saveToLocalStorage();
+   renderTaskList();
+   $("#formModal").modal("hide"); //  When this code runs, the modal window with id="formModal" is closed.
+   $("#task-form")[0].reset(); //The form fields inside the modal are cleared, ready for a new task to be entered the next time the modal is opened.
+  }
+   
 
-}
 
 // Todo: create a function to handle deleting a task
 function handleDeleteTask(event){
