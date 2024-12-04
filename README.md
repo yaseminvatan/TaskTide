@@ -1,100 +1,143 @@
-# 05 Third-Party APIs: Task Board
+# Task Board Application
 
-## Your Task
+A simple, interactive Kanban-style task management application that allows users to manage project tasks dynamically. This application is built using **jQuery**, **Day.js**, and **Bootstrap**, and features persistent task storage via **localStorage**.
 
-Create a simple task board application that allows a team to manage project tasks by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+---
 
-You'll need to use the [Day.js](https://day.js.org/en/) library to work with dates. Be sure to read the documentation carefully and concentrate on using Day.js in the browser.
+## Table of Contents
 
-## User Story
+- [Description](#description)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Usage](#usage)
+- [Installation](#installation)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
 
-```md
-AS A project team member with multiple tasks to organize
-I WANT a task board 
-SO THAT I can add individual project tasks, manage their state of progress and track overall project progress accordingly
-```
+---
 
-## Acceptance Criteria
+## Description
 
-```md
-GIVEN a task board to manage a project
-WHEN I open the task board
-THEN the list of project tasks is displayed in columns representing the task progress state (Not Yet Started, In Progress, Completed)
-WHEN I view the task board for the project
-THEN each task is color coded to indicate whether it is nearing the deadline (yellow) or is overdue (red)
-WHEN I click on the button to define a new task
-THEN I can enter the title, description and deadline date for the new task into a modal dialog
-WHEN I click the save button for that task
-THEN the properties for that task are saved in localStorage
-WHEN I drag a task to a different progress column
-THEN the task's progress state is updated accordingly and will stay in the new column after refreshing
-WHEN I click the delete button for a task
-THEN the task is removed from the task board and will not be added back after refreshing
-WHEN I refresh the page
-THEN the saved tasks persist
-```
+The **Task Board Application** is a browser-based tool for organizing and tracking tasks. It allows users to:
+- Add tasks with a title, description, and due date.
+- Move tasks across progress states: **To-Do**, **In Progress**, and **Done**.
+- Track tasks visually with color-coded deadlines.
+- Delete completed or unnecessary tasks.
+- Persist tasks across sessions using browser localStorage.
 
-The following animation demonstrates the application functionality:
+This tool is perfect for project team members or individuals looking to track their daily tasks or project progress in an intuitive and visually appealing way.
 
-![A user adds three tasks to the task board and changes the state of two of them to in progress and then completion. The user then deletes the two cards in the done column.](./Assets/05-third-party-apis-homework-demo.gif)
+---
 
-## Grading Requirements
+## Features
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+1. **Dynamic Task Management**  
+   - Add, update, move, and delete tasks.
+   - Drag and drop tasks across progress lanes.
 
-This Challenge is graded based on the following criteria:
+2. **Color-Coded Task Status**  
+   - Tasks are highlighted:
+     - **Red**: Overdue.
+     - **Yellow**: Due today.
+     - **Neutral**: Upcoming.
 
-### Technical Acceptance Criteria: 40%
+3. **Persistent Storage**  
+   - Tasks and their states are saved in `localStorage`, ensuring data remains intact across page reloads.
 
-* Satisfies all of the above acceptance criteria plus the following:
+4. **Responsive Design**  
+   - Fully responsive and mobile-friendly interface using **Bootstrap**.
 
-  * Uses the Day.js library to work with dates
+5. **Date Handling**  
+   - Utilizes the **Day.js** library to handle and format dates efficiently.
 
-### Deployment: 32%
+---
 
-* Application deployed at live URL
+## Technologies Used
 
-* Application loads with no errors
+- **HTML5**  
+  Semantic markup to structure the application.
 
-* Application GitHub URL submitted
+- **CSS3 / Bootstrap**  
+  Styling and layout, including responsive design and modal dialogs.
 
-* GitHub repo contains application code
+- **JavaScript / jQuery**  
+  Core application logic, DOM manipulation, and interactivity.
 
-### Application Quality: 15%
+- **Day.js**  
+  Lightweight date manipulation library.
 
-* Application user experience is intuitive and easy to navigate
+- **jQuery UI**  
+  Drag-and-drop functionality for tasks.
 
-* Application user interface style is clean and polished
+- **localStorage**  
+  For persisting tasks across sessions.
 
-* Application resembles the mock-up functionality provided in the Challenge instructions
+---
 
-### Repository Quality: 13%
+## Usage
 
-* Repository has a unique name
+1. **Add a Task**  
+   - Click the **Add Task** button to open a modal.
+   - Enter the task title, description, and due date.
+   - Click **Save Task** to add the task to the **To-Do** lane.
 
-* Repository follows best practices for file structure and naming conventions
+2. **Move Tasks**  
+   - Drag and drop tasks between lanes (**To-Do**, **In Progress**, **Done**) to update their status.
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+3. **Delete a Task**  
+   - Click the **Delete** button on any task card to remove it.
 
-* Repository contains multiple descriptive commit messages
+4. **Visual Feedback**  
+   - Tasks are highlighted in red if overdue and yellow if due today.
 
-* Repository contains quality README file with description, screenshot, and link to deployed application
+5. **Persistent Data**  
+   - Tasks are automatically saved, so they persist after page reloads.
 
-## Review
+---
 
-You are required to submit the following for review:
+## Installation
 
-* The URL of the deployed application
+### Prerequisites
+- A modern web browser (Chrome, Firefox, Edge, etc.).
 
-* The URL of the GitHub repository, with a unique name and a README describing the project
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/task-board.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd task-board
+   ```
+3. Open the `index.html` file in your browser.
 
-- - -
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+---
+
+## Screenshots
+
+### Task Board Interface
+![Task Board Interface](./assets/screenshots/task-board.png)
+
+---
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome!  
+Feel free to check the [issues page](https://github.com/your-username/task-board/issues) to report any bugs or suggest new features.
+
+---
+
+## License
+
+This project is licensed under the MIT License.  
+See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Acknowledgments
+
+- **Bootstrap** for styling and modal dialogs.
+- **jQuery** for simplifying DOM manipulation.
+- **Day.js** for efficient date handling.
+- **jQuery UI** for providing draggable and droppable functionality.
